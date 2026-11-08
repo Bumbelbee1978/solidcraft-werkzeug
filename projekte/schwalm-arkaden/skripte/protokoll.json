@@ -1,0 +1,1274 @@
+[
+ {
+  "name": "Bogenkachel_42",
+  "gruppe": "SA_01_Arkaden",
+  "volumen": {
+   "Kachel": 2056.4,
+   "Sandstein": 96.29
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   42.0,
+   55.0,
+   2.8
+  ],
+  "volumen_gesamt": 2152.7
+ },
+ {
+  "name": "Durchlasskachel_36",
+  "gruppe": "SA_01_Arkaden",
+  "volumen": {
+   "Kachel": 2384.14,
+   "Sandstein": 84.29
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   36.0,
+   55.0,
+   2.8
+  ],
+  "volumen_gesamt": 2468.4
+ },
+ {
+  "name": "Wandkachel_3",
+  "gruppe": "SA_01_Arkaden",
+  "volumen": {
+   "Kachel": 327.79,
+   "Sandstein": 6.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   3.0,
+   55.0,
+   2.6
+  ],
+  "volumen_gesamt": 333.8
+ },
+ {
+  "name": "Wandkachel_6",
+  "gruppe": "SA_01_Arkaden",
+  "volumen": {
+   "Kachel": 655.78,
+   "Sandstein": 12.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   6.0,
+   55.0,
+   2.6
+  ],
+  "volumen_gesamt": 667.8
+ },
+ {
+  "name": "Wandkachel_7",
+  "gruppe": "SA_01_Arkaden",
+  "volumen": {
+   "Kachel": 765.17,
+   "Sandstein": 14.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   7.0,
+   55.0,
+   2.6
+  ],
+  "volumen_gesamt": 779.2
+ },
+ {
+  "name": "Wandkachel_14",
+  "gruppe": "SA_01_Arkaden",
+  "volumen": {
+   "Kachel": 1530.34,
+   "Sandstein": 28.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   14.0,
+   55.0,
+   2.6
+  ],
+  "volumen_gesamt": 1558.3
+ },
+ {
+  "name": "Wandkachel_27",
+  "gruppe": "SA_01_Arkaden",
+  "volumen": {
+   "Kachel": 2951.47,
+   "Sandstein": 54.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   27.0,
+   55.0,
+   2.6
+  ],
+  "volumen_gesamt": 3005.5
+ },
+ {
+  "name": "Laibung_50",
+  "gruppe": "SA_01_Arkaden",
+  "volumen": {
+   "Laibung": 2312.21
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   37.6,
+   18.8,
+   50.0
+  ],
+  "volumen_gesamt": 2312.2
+ },
+ {
+  "name": "Laibung_60",
+  "gruppe": "SA_01_Arkaden",
+  "volumen": {
+   "Laibung": 2774.65
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   37.6,
+   18.8,
+   60.0
+  ],
+  "volumen_gesamt": 2774.7
+ },
+ {
+  "name": "Laibung_186",
+  "gruppe": "SA_01_Arkaden",
+  "volumen": {
+   "Laibung": 8601.43
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   37.6,
+   18.8,
+   186.0
+  ],
+  "volumen_gesamt": 8601.4
+ },
+ {
+  "name": "Ladeneinsatz_Kiosk",
+  "gruppe": "SA_02_Laeden",
+  "volumen": {
+   "Laden": 6007.58,
+   "Holz": 181.97,
+   "Schrift": 4.61
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   35.6,
+   49.5,
+   24.0
+  ],
+  "volumen_gesamt": 6194.2
+ },
+ {
+  "name": "Ladeneinsatz_Imbiss",
+  "gruppe": "SA_02_Laeden",
+  "volumen": {
+   "Laden": 6007.58,
+   "Holz": 181.97,
+   "Schrift": 5.37
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   35.6,
+   49.5,
+   24.0
+  ],
+  "volumen_gesamt": 6194.9
+ },
+ {
+  "name": "Ladenfront",
+  "gruppe": "SA_02_Laeden",
+  "volumen": {
+   "Rahmen": 535.32
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   35.6,
+   24.0,
+   1.2
+  ],
+  "volumen_gesamt": 535.3
+ },
+ {
+  "name": "Portal",
+  "gruppe": "SA_02_Laeden",
+  "volumen": {
+   "Rahmen": 709.49
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   35.6,
+   24.0,
+   1.2
+  ],
+  "volumen_gesamt": 709.5
+ },
+ {
+  "name": "Fenster",
+  "gruppe": "SA_02_Laeden",
+  "volumen": {
+   "Rahmen": 532.24
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   35.6,
+   24.0,
+   1.2
+  ],
+  "volumen_gesamt": 532.2
+ },
+ {
+  "name": "Faecher_Oberlicht",
+  "gruppe": "SA_02_Laeden",
+  "volumen": {
+   "Oberlicht": 86.93
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   35.0,
+   17.5,
+   0.8
+  ],
+  "volumen_gesamt": 86.9
+ },
+ {
+  "name": "Bahnsteig_C1_Normal_200",
+  "gruppe": "SA_03_Bahnsteig",
+  "volumen": {
+   "Bahnsteig": 51734.69,
+   "Weiss": 528.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   204.0,
+   45.0,
+   6.1
+  ],
+  "volumen_gesamt": 52262.7
+ },
+ {
+  "name": "Bahnsteig_C1k_Kurz_103",
+  "gruppe": "SA_03_Bahnsteig",
+  "volumen": {
+   "Bahnsteig": 26634.97,
+   "Weiss": 271.92
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   107.0,
+   45.0,
+   6.1
+  ],
+  "volumen_gesamt": 26906.9
+ },
+ {
+  "name": "Bahnsteig_C2_Ende_200",
+  "gruppe": "SA_03_Bahnsteig",
+  "volumen": {
+   "Bahnsteig": 47898.46,
+   "Weiss": 451.64
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   204.0,
+   45.0,
+   6.1
+  ],
+  "volumen_gesamt": 48350.1
+ },
+ {
+  "name": "Bahnsteig_C2k_Ende_97",
+  "gruppe": "SA_03_Bahnsteig",
+  "volumen": {
+   "Bahnsteig": 21100.87,
+   "Weiss": 179.72
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   97.0,
+   45.0,
+   6.1
+  ],
+  "volumen_gesamt": 21280.6
+ },
+ {
+  "name": "Bahnsteig_C3_Aufgang_200",
+  "gruppe": "SA_03_Bahnsteig",
+  "volumen": {
+   "Bahnsteig": 43616.22,
+   "Weiss": 528.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   204.0,
+   45.0,
+   6.1
+  ],
+  "volumen_gesamt": 44144.2
+ },
+ {
+  "name": "Treppe",
+  "gruppe": "SA_04_Aufgaenge",
+  "volumen": {
+   "Treppe": 5560.33
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   135.0,
+   10.0,
+   61.0
+  ],
+  "volumen_gesamt": 5560.3
+ },
+ {
+  "name": "Treppenwange",
+  "gruppe": "SA_04_Aufgaenge",
+  "volumen": {
+   "Wange": 668.4
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   135.0,
+   67.0,
+   0.8
+  ],
+  "volumen_gesamt": 668.4
+ },
+ {
+  "name": "Treppenstuetze",
+  "gruppe": "SA_04_Aufgaenge",
+  "volumen": {
+   "Stuetze": 114.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   28.5,
+   2.0,
+   2.0
+  ],
+  "volumen_gesamt": 114.0
+ },
+ {
+  "name": "Rolltreppe",
+  "gruppe": "SA_04_Aufgaenge",
+  "volumen": {
+   "Wanne": 2312.79,
+   "Stufenband": 302.37
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   135.0,
+   6.4,
+   61.0
+  ],
+  "volumen_gesamt": 2615.2
+ },
+ {
+  "name": "Rolltreppenwange",
+  "gruppe": "SA_04_Aufgaenge",
+  "volumen": {
+   "Wange": 866.89
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   135.0,
+   66.0,
+   0.8
+  ],
+  "volumen_gesamt": 866.9
+ },
+ {
+  "name": "Aufzug_Laengsseite",
+  "gruppe": "SA_04_Aufgaenge",
+  "volumen": {
+   "Platte": 140.54
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   15.0,
+   83.0,
+   0.8
+  ],
+  "volumen_gesamt": 140.5
+ },
+ {
+  "name": "Aufzug_Schmalseite_Tuer_unten",
+  "gruppe": "SA_04_Aufgaenge",
+  "volumen": {
+   "Platte": 144.38
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   10.4,
+   83.0,
+   0.8
+  ],
+  "volumen_gesamt": 144.4
+ },
+ {
+  "name": "Aufzug_Schmalseite_Tuer_oben",
+  "gruppe": "SA_04_Aufgaenge",
+  "volumen": {
+   "Platte": 147.2
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   10.4,
+   83.0,
+   0.8
+  ],
+  "volumen_gesamt": 147.2
+ },
+ {
+  "name": "Aufzug_Dach",
+  "gruppe": "SA_04_Aufgaenge",
+  "volumen": {
+   "Dach": 280.32
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   15.0,
+   12.0,
+   1.6
+  ],
+  "volumen_gesamt": 280.3
+ },
+ {
+  "name": "Aufzug_Boden",
+  "gruppe": "SA_04_Aufgaenge",
+  "volumen": {
+   "Boden": 144.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   15.0,
+   12.0,
+   0.8
+  ],
+  "volumen_gesamt": 144.0
+ },
+ {
+  "name": "Aufzug_Kabine",
+  "gruppe": "SA_04_Aufgaenge",
+  "volumen": {
+   "Kabine": 519.49
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   13.0,
+   14.0,
+   10.0
+  ],
+  "volumen_gesamt": 519.5
+ },
+ {
+  "name": "Aussentraeger_3_Felder",
+  "gruppe": "SA_05_Stahl",
+  "volumen": {
+   "Traeger": 776.18
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   55.0,
+   12.0,
+   3.0
+  ],
+  "volumen_gesamt": 776.2
+ },
+ {
+  "name": "Aussentraeger_6_Felder",
+  "gruppe": "SA_05_Stahl",
+  "volumen": {
+   "Traeger": 1524.75
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   109.0,
+   12.0,
+   3.0
+  ],
+  "volumen_gesamt": 1524.8
+ },
+ {
+  "name": "Aussentraeger_8_Felder",
+  "gruppe": "SA_05_Stahl",
+  "volumen": {
+   "Traeger": 2023.79
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   145.0,
+   12.0,
+   3.0
+  ],
+  "volumen_gesamt": 2023.8
+ },
+ {
+  "name": "Fahrbahnplatte_54",
+  "gruppe": "SA_05_Stahl",
+  "volumen": {
+   "Platte": 28368.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   54.0,
+   190.0,
+   8.0
+  ],
+  "volumen_gesamt": 28368.0
+ },
+ {
+  "name": "Fahrbahnplatte_108",
+  "gruppe": "SA_05_Stahl",
+  "volumen": {
+   "Platte": 55098.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   108.0,
+   190.0,
+   8.0
+  ],
+  "volumen_gesamt": 55098.0
+ },
+ {
+  "name": "Fahrbahnplatte_144",
+  "gruppe": "SA_05_Stahl",
+  "volumen": {
+   "Platte": 72918.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   144.0,
+   190.0,
+   8.0
+  ],
+  "volumen_gesamt": 72918.0
+ },
+ {
+  "name": "Gitterstuetze",
+  "gruppe": "SA_05_Stahl",
+  "volumen": {
+   "Stuetze": 405.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   4.5,
+   4.5,
+   43.0
+  ],
+  "volumen_gesamt": 405.0
+ },
+ {
+  "name": "Bogenrippe_Schwalm",
+  "gruppe": "SA_05_Stahl",
+  "volumen": {
+   "Bogenrippe": 1603.74
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   116.0,
+   51.6,
+   3.0
+  ],
+  "volumen_gesamt": 1603.7
+ },
+ {
+  "name": "Betonwand_Feld",
+  "gruppe": "SA_06_Beton",
+  "volumen": {
+   "Wand": 8498.16
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   45.0,
+   61.0,
+   4.5
+  ],
+  "volumen_gesamt": 8498.2
+ },
+ {
+  "name": "Kappe_225",
+  "gruppe": "SA_06_Beton",
+  "volumen": {
+   "Kappe": 1341.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   225.0,
+   4.0,
+   2.0
+  ],
+  "volumen_gesamt": 1341.0
+ },
+ {
+  "name": "Kabeltrog_225",
+  "gruppe": "SA_06_Beton",
+  "volumen": {
+   "Trog": 1181.25
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   225.0,
+   3.5,
+   1.5
+  ],
+  "volumen_gesamt": 1181.2
+ },
+ {
+  "name": "Doppelsitzbank",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Bank": 43.52
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   3.2,
+   12.0,
+   5.2
+  ],
+  "volumen_gesamt": 43.5
+ },
+ {
+  "name": "Parkbank",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Bank": 25.6
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   3.2,
+   10.0,
+   3.0
+  ],
+  "volumen_gesamt": 25.6
+ },
+ {
+  "name": "Marktstand",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Stand": 1548.74
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   18.0,
+   18.0,
+   17.0
+  ],
+  "volumen_gesamt": 1548.7
+ },
+ {
+  "name": "Markise",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Markise": 255.04,
+   "Streifen": 67.2
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   19.0,
+   20.0,
+   2.0
+  ],
+  "volumen_gesamt": 322.2
+ },
+ {
+  "name": "Fahrradstation",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Station": 525.47
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   40.0,
+   15.0,
+   14.0
+  ],
+  "volumen_gesamt": 525.5
+ },
+ {
+  "name": "Fahrradstation_Dach",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Rahmen": 88.64
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   41.0,
+   16.0,
+   1.0
+  ],
+  "volumen_gesamt": 88.6
+ },
+ {
+  "name": "Zugzielanzeiger",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Gehaeuse": 64.57,
+   "Anzeige": 4.67
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   10.0,
+   2.2,
+   3.2
+  ],
+  "volumen_gesamt": 69.2
+ },
+ {
+  "name": "Pavillon_Rueckwand",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Rahmen": 84.22,
+   "Fahrplan": 52.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   38.0,
+   15.5,
+   0.8
+  ],
+  "volumen_gesamt": 136.2
+ },
+ {
+  "name": "Pavillon_Stirnseite",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Rahmen": 30.59
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   10.0,
+   15.5,
+   0.8
+  ],
+  "volumen_gesamt": 30.6
+ },
+ {
+  "name": "Pavillon_Dach",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Dach": 355.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   40.0,
+   10.0,
+   1.0
+  ],
+  "volumen_gesamt": 355.0
+ },
+ {
+  "name": "Tramhaus_Rueckwand",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Rahmen": 98.4
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   28.0,
+   16.0,
+   0.8
+  ],
+  "volumen_gesamt": 98.4
+ },
+ {
+  "name": "Tramhaus_Dach",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Dach": 188.5
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   29.0,
+   6.5,
+   1.0
+  ],
+  "volumen_gesamt": 188.5
+ },
+ {
+  "name": "Tramhaus_Bank",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Bank": 39.42
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   20.0,
+   2.2,
+   2.0
+  ],
+  "volumen_gesamt": 39.4
+ },
+ {
+  "name": "Fahrkartenautomat",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Automat": 106.28,
+   "Display": 1.2
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   4.0,
+   2.5,
+   11.0
+  ],
+  "volumen_gesamt": 107.5
+ },
+ {
+  "name": "Laterne_Fuss_Kopf",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Fuss": 2.31,
+   "Kopf": 6.27
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   6.0,
+   2.4,
+   2.8
+  ],
+  "volumen_gesamt": 8.6
+ },
+ {
+  "name": "Brunnen",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Brunnen": 184.45
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   12.0,
+   12.0,
+   11.0
+  ],
+  "volumen_gesamt": 184.4
+ },
+ {
+  "name": "Litfasssaeule",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Saeule": 588.04
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   7.0,
+   7.0,
+   20.0
+  ],
+  "volumen_gesamt": 588.0
+ },
+ {
+  "name": "Tram_Steig",
+  "gruppe": "SA_07_Ausstattung",
+  "volumen": {
+   "Steig": 5943.6,
+   "Leit": 78.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   150.0,
+   19.5,
+   2.3
+  ],
+  "volumen_gesamt": 6021.6
+ },
+ {
+  "name": "Haus_Fassade_34",
+  "gruppe": "SA_08_Stadt",
+  "volumen": {
+   "Putz": 3745.02,
+   "Weiss": 396.32,
+   "Tuer": 84.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   34.0,
+   100.0,
+   2.0
+  ],
+  "volumen_gesamt": 4225.3
+ },
+ {
+  "name": "Haus_Fassade_30",
+  "gruppe": "SA_08_Stadt",
+  "volumen": {
+   "Putz": 3706.02,
+   "Weiss": 295.2,
+   "Tuer": 84.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   30.0,
+   100.0,
+   2.0
+  ],
+  "volumen_gesamt": 4085.2
+ },
+ {
+  "name": "Haus_Seitenwand",
+  "gruppe": "SA_08_Stadt",
+  "volumen": {
+   "Wand": 10080.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   63.0,
+   100.0,
+   1.6
+  ],
+  "volumen_gesamt": 10080.0
+ },
+ {
+  "name": "Haus_Rueckwand_30.8",
+  "gruppe": "SA_08_Stadt",
+  "volumen": {
+   "Wand": 4112.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   30.8,
+   100.0,
+   1.6
+  ],
+  "volumen_gesamt": 4112.0
+ },
+ {
+  "name": "Haus_Rueckwand_26.8",
+  "gruppe": "SA_08_Stadt",
+  "volumen": {
+   "Wand": 3712.0
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   26.8,
+   100.0,
+   1.6
+  ],
+  "volumen_gesamt": 3712.0
+ },
+ {
+  "name": "Haus_Mansarddach_34",
+  "gruppe": "SA_08_Stadt",
+  "volumen": {
+   "Dach": 8177.94
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   34.0,
+   65.6,
+   25.0
+  ],
+  "volumen_gesamt": 8177.9
+ },
+ {
+  "name": "Haus_Mansarddach_30",
+  "gruppe": "SA_08_Stadt",
+  "volumen": {
+   "Dach": 7334.41
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   30.0,
+   65.6,
+   25.0
+  ],
+  "volumen_gesamt": 7334.4
+ },
+ {
+  "name": "Haus_Deckenplatte_30.8",
+  "gruppe": "SA_08_Stadt",
+  "volumen": {
+   "Decke": 2210.21
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   30.8,
+   59.8,
+   1.2
+  ],
+  "volumen_gesamt": 2210.2
+ },
+ {
+  "name": "Haus_Deckenplatte_26.8",
+  "gruppe": "SA_08_Stadt",
+  "volumen": {
+   "Decke": 1923.17
+  },
+  "ok": true,
+  "info": {},
+  "masse": [
+   26.8,
+   59.8,
+   1.2
+  ],
+  "volumen_gesamt": 1923.2
+ },
+ {
+  "name": "Bogen_A",
+  "gruppe": "SA_09_Dach",
+  "volumen": {
+   "Bogen_A": 3598.7
+  },
+  "ok": true,
+  "info": {
+   "stueck": 9,
+   "text": "voller Bogen, Kerben außen"
+  },
+  "masse": [
+   190.1,
+   120.6,
+   4.0
+  ],
+  "volumen_gesamt": 3598.7
+ },
+ {
+  "name": "Bogen_B",
+  "gruppe": "SA_09_Dach",
+  "volumen": {
+   "Bogen_B": 3600.4
+  },
+  "ok": true,
+  "info": {
+   "stueck": 9,
+   "text": "voller Bogen, Kerben innen"
+  },
+  "masse": [
+   190.1,
+   120.6,
+   4.0
+  ],
+  "volumen_gesamt": 3600.4
+ },
+ {
+  "name": "Teilbogen_B5_Ost",
+  "gruppe": "SA_09_Dach",
+  "volumen": {
+   "Teilbogen_B5_Ost": 2473.19
+  },
+  "ok": true,
+  "info": {
+   "stueck": 1,
+   "text": "beginnt auf Höhe 47,9, Kerben innen"
+  },
+  "masse": [
+   179.6,
+   67.9,
+   4.0
+  ],
+  "volumen_gesamt": 2473.2
+ },
+ {
+  "name": "Kappe_B6_Ost",
+  "gruppe": "SA_09_Dach",
+  "volumen": {
+   "Kappe_B6_Ost": 1088.37
+  },
+  "ok": true,
+  "info": {
+   "stueck": 1,
+   "text": "beginnt auf Höhe 95,7"
+  },
+  "masse": [
+   105.7,
+   17.1,
+   4.0
+  ],
+  "volumen_gesamt": 1088.4
+ },
+ {
+  "name": "Teilbogen_A5_West",
+  "gruppe": "SA_09_Dach",
+  "volumen": {
+   "Teilbogen_A5_West": 2474.17
+  },
+  "ok": true,
+  "info": {
+   "stueck": 1,
+   "text": "beginnt auf Höhe 47,9, Kerben außen"
+  },
+  "masse": [
+   179.6,
+   67.9,
+   4.0
+  ],
+  "volumen_gesamt": 2474.2
+ },
+ {
+  "name": "Kappe_A6_West",
+  "gruppe": "SA_09_Dach",
+  "volumen": {
+   "Kappe_A6_West": 1088.37
+  },
+  "ok": true,
+  "info": {
+   "stueck": 1,
+   "text": "beginnt auf Höhe 95,7"
+  },
+  "masse": [
+   105.7,
+   17.1,
+   4.0
+  ],
+  "volumen_gesamt": 1088.4
+ },
+ {
+  "name": "Stirnbogen_Ost",
+  "gruppe": "SA_09_Dach",
+  "volumen": {
+   "Stirnbogen_Ost": 4050.8
+  },
+  "ok": true,
+  "info": {
+   "stueck": 1
+  },
+  "masse": [
+   190.1,
+   135.7,
+   4.0
+  ],
+  "volumen_gesamt": 4050.8
+ },
+ {
+  "name": "Stirnbogen_West",
+  "gruppe": "SA_09_Dach",
+  "volumen": {
+   "Stirnbogen_West": 4050.8
+  },
+  "ok": true,
+  "info": {
+   "stueck": 1
+  },
+  "masse": [
+   190.1,
+   135.7,
+   4.0
+  ],
+  "volumen_gesamt": 4050.8
+ },
+ {
+  "name": "Fussschwelle_1",
+  "gruppe": "SA_09_Dach",
+  "volumen": {
+   "Fussschwelle_1": 915.25
+  },
+  "ok": true,
+  "info": {
+   "stueck": 2,
+   "loecher": 5
+  },
+  "masse": [
+   230.0,
+   4.0,
+   1.0
+  ],
+  "volumen_gesamt": 915.2
+ },
+ {
+  "name": "Fussschwelle_2",
+  "gruppe": "SA_09_Dach",
+  "volumen": {
+   "Fussschwelle_2": 716.2
+  },
+  "ok": true,
+  "info": {
+   "stueck": 2,
+   "loecher": 4
+  },
+  "masse": [
+   180.0,
+   4.0,
+   1.0
+  ],
+  "volumen_gesamt": 716.2
+ },
+ {
+  "name": "Montagespant",
+  "gruppe": "SA_09_Dach",
+  "volumen": {
+   "Montagespant": 14472.28
+  },
+  "ok": true,
+  "info": {
+   "stueck": 5
+  },
+  "masse": [
+   181.7,
+   108.8,
+   4.0
+  ],
+  "volumen_gesamt": 14472.3
+ }
+]
