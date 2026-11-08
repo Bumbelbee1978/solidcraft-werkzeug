@@ -20,4 +20,5 @@ tar xzf sc.tar.gz && rm sc.tar.gz && ./solidcraft-cli --help | head -3
 |---|---|
 | `lib/teile.py` | Hilfsfunktionen (Skizze, Bogen, Ringsektor, Faltwand mit V-Nut, Löcher) und alle Teile der Heimanlage |
 | `lib/aufzug_bildanleitung.py` | Beispiel für eine Bild-Bauanleitung: Szenen rendern, beschriften |
+| `projekte/alsfeld-bhf/` | Heimanlage „Alsfeld BHF“ (Arbeitstitel): Wendel- und Bahnhofsteile, Skripte |
 | `projekte/schwalm-arkaden/` | Bahnhofsmodul „Nächster Halt: Schwalm-Arkaden“: 81 Teile (ZIP), Skripte, Bildanleitung |
