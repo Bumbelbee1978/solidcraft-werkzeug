@@ -353,7 +353,20 @@ const kap4 = [
     ["Kran, Kranbahn, Kopframpe, Bahnübergang", "PLA (Kran gelb/orange, Rest grau)", "0,4 / 0,2"],
     ["Anlaufklötze, Ausfahrplatte", "PETG", "0,4"],
     ["Aufzugturm-Faltwand", "PETG schwarz (biegt besser) oder PLA mit Föhn", "0,2 bei 0,1 mm Schicht"],
+    ["Konsolen, Klemmböcke, Wendelplatten", "PETG (Wendel ggf. transparent)", "0,4"],
+    ["Rolltreppen-Seitenteile", "PETG transparent (wird milchig wie Glasbrüstung)", "0,4"],
   ], [4200, 4000, BREITE - 8200]),
+  h2("TPU Hard (Extrudr) – Restbestand"),
+  absatz("Härter als TPU 95A, deshalb **nicht für die Gleisbettung** (dämpft zu wenig). Gut für alles, was federn und trotzdem halten soll:"),
+  ...tabelle(["Teil", "Zweck"], [
+    ["Kappen für die Gewindestangen", "oben auf die Stangenenden – kein Kratzen beim Aufgleisen, sauberer Anblick im transparenten Wendel"],
+    ["Servo-Dämpfer", "Tüllen/Unterlagen für SG90 (Aufzug) und Weichenservos – weniger Brummen"],
+    ["Kabelclips, Kabeldurchführungen", "unter der Anlage, Schutz an Bohrungen"],
+    ["Prellbock-Puffer", "Gleisenden im Schattenbahnhof und Rangierbereich"],
+    ["Gummifüße", "unter dem Wendelbrett / den Beinen zur Schalldämmung"],
+    ["Filmscharniere", "Tore am KV-Terminal, Klappen"],
+  ], [4200, BREITE - 4200]),
+  ...tipp("Auch TPU Hard vor dem Druck trocknen (AMS-Programm TPU) und von der externen Rolle drucken."),
   ...hinweis("Verglasung der Brücke und der Dächer mit klarer PET-Folie (ca. 0,2 mm) von innen hinterkleben."),
 ];
   return kap4;
