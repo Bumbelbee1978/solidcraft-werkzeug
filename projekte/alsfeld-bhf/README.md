@@ -36,7 +36,7 @@ Druckwerte: Schwalbenschwanz-Spiel 0,15 mm je Seite, Faltwände mit 0,2-Düse un
 
 - Schwalbenschwänze verkleben (dünner Sekundenkleber, ggf. mit Primer)
 - Außen: Gewindestange durch die halben Löcher an der Fuge, dazu zwei Stifte Ø 4 × 3 mm (R 343, 10 mm neben der Fuge)
-- Innen: Konsole mit zwei Stiften Ø 4 × 3 mm (R 258, 10 mm neben der Fuge), Platte mit Sacklanghloch 4,4 × 5 × 3,4 mm von unten
+- Innen: Konsole mit zwei Stiften Ø 4 × 3 mm (R 258, 10 mm neben der Fuge), Platte mit Sacklanghloch 4,2 × 5 × 3,4 mm (4,4 war zu locker) von unten
 - Höhe nur über Mutter und Kontermutter einstellen
 - TPU-Bettung mit Anschlagnasen (6 × 1 mm) bis an Randleiste bzw. Leitkante, Nasen 5° vom Streifenende
 

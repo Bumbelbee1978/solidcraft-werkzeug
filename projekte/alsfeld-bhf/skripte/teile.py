@@ -464,7 +464,7 @@ if __name__ == "__main__":
 # Wendel v2: ohne Schrauben im Plattenmaterial (Ratsbeschluss 09.11.)
 # =====================================================================
 STIFT_D, STIFT_H = 4.0, 3.0          # Stift oben auf der Innenkonsole
-NUT_B, NUT_L, NUT_T = 4.4, 5.0, 3.4  # Sacklanghloch in der Platte (tangential × radial × tief)
+NUT_B, NUT_L, NUT_T = 4.2, 5.0, 3.4  # 4,4 war zu locker (Probe 09.11.)  # Sacklanghloch in der Platte (tangential × radial × tief)
 STIFT_R, STIFT_A = 258.0, 10.0       # Radius und Abstand zur Fuge (innen)
 STIFT_R_AUSSEN = 343.0               # Radius der Stifte außen (auf Höhe der Stange)
 
@@ -519,9 +519,15 @@ def passprobe():
     b = ringsektor("Probe", 250, 275, 0, 8, 4, koerper="Passprobe")
     b += ringsektor("Probe_Rand", 250, 254, 0, 8, 4, op="join", koerper="Passprobe", offset=4)
     b += langloch_cut("Probe_Loch", [STIFT_R, STIFT_A], 0, "Passprobe")
-    # Außenstück R 330–350 (ohne Leitkante, nur für die Passung)
+    # Gegenstück (das andere Plattenende): gespiegelt, Loch 10 mm vor der Kante bei 8°
+    b += ringsektor("ProbeG", 250, 275, 10, 18, 4, koerper="Passprobe_G")
+    b += ringsektor("ProbeG_Rand", 250, 254, 10, 18, 4, op="join", koerper="Passprobe_G", offset=4)
+    b += langloch_cut("ProbeG_Loch", rot([STIFT_R, -STIFT_A], 18), 18, "Passprobe_G")
+    # Außenstücke R 330–350 (ohne Leitkante, nur für die Passung), ebenfalls als Paar
     b += ringsektor("Probe_a", 330, 350, 0, 6, 4, koerper="Passprobe_aussen")
     b += langloch_cut("Probe_Loch_a", [STIFT_R_AUSSEN, STIFT_A], 0, "Passprobe_aussen")
+    b += ringsektor("ProbeG_a", 330, 350, 10, 16, 4, koerper="Passprobe_aussen_G")
+    b += langloch_cut("ProbeG_Loch_a", rot([STIFT_R_AUSSEN, -STIFT_A], 16), 16, "Passprobe_aussen_G")
     return b
 
 
