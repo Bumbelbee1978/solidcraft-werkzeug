@@ -480,11 +480,11 @@ def langloch_cut(name, mitte, winkel, koerper):
     return vieleck(name, pkt, NUT_T, op="cut", koerper=koerper)
 
 
-def stift(name, x, y, z, koerper):
+def stift(name, x, y, z, koerper, hoehe=None):
     """Zylindrischer Stift als 24-Eck (robuster als Kreis-Join)."""
     pkt = [[round(x + STIFT_D / 2 * math.cos(2 * math.pi * i / 24), 4),
             round(y + STIFT_D / 2 * math.sin(2 * math.pi * i / 24), 4)] for i in range(24)]
-    return vieleck(name, pkt, STIFT_H, op="join", koerper=koerper, offset=z)
+    return vieleck(name, pkt, hoehe or STIFT_H, op="join", koerper=koerper, offset=z)
 
 
 def wendelplatte_v2():
@@ -603,3 +603,66 @@ def klemmbock():
 
 
 TEILE_V2["HA_02_Klemmbock"] = (klemmbock, None)
+
+
+# =====================================================================
+# v3: Keilflächen – die Platten steigen in Laufrichtung, Konsolen und Muttern liegen waagerecht
+# =====================================================================
+STEIGUNG_PRO_PLATTE = 4.25
+
+
+def gefaelle(r):
+    """Steigung der Platte in Laufrichtung bei Radius r (Höhe je mm Bogenlänge)."""
+    return STEIGUNG_PRO_PLATTE / (r * math.pi / 6)
+
+
+def keil(name, x0, x1, y0, y1, z_unten, z_oben, s_unten, s_oben, op="new", koerper=None):
+    """Prisma mit schrägen Flächen: Profil in der YZ-Ebene (y tangential, bergauf = +y), radial von x0 bis x1.
+    s_unten/s_oben = Steigung der Unter-/Oberseite (0 = waagerecht)."""
+    pkt = [[y0, round(z_unten + s_unten * y0, 4)], [y1, round(z_unten + s_unten * y1, 4)],
+           [y1, round(z_oben + s_oben * y1, 4)], [y0, round(z_oben + s_oben * y0, 4)]]
+    return vieleck(name, pkt, x1 - x0, op=op, koerper=koerper, ebene="YZ", offset=x0)
+
+
+def markierung_bergauf(name, x0, x1, y_hoch, koerper):
+    """Kleine Fase 1,5 mm unten an der hohen (bergauf liegenden) Stirnseite."""
+    pkt = [[y_hoch, 0], [y_hoch - 1.5, 0], [y_hoch, 1.5]]
+    return vieleck(name, pkt, x1 - x0, op="cut", koerper=koerper, ebene="YZ", offset=x0)
+
+
+def konsolen_v3():
+    """Konsolen mit Keil-Oberseite (Mitte = Fuge 6 mm, bergauf höher), waagerechte Unterseite,
+    je zwei Stifte. Fase unten an der Stirnseite = bergauf."""
+    b = []
+    si, sa = gefaelle(256), gefaelle(344)
+    b += keil("Konsole_innen", 0, 30, -20, 20, 0, 6, 0, si, koerper="Konsole_innen")
+    b += [loch(8, 0, 6, 6.5, name="Stange_innen", ziel="Konsole_innen")]
+    for n, s in enumerate((-1, 1)):
+        y = s * STIFT_A
+        b += stift(f"Stift_{n}", STIFT_R - 232, y, round(6 + si * y - 0.3, 4), "Konsole_innen", hoehe=STIFT_H + 0.3)
+    b += markierung_bergauf("Marke_innen", 0, 30, 20, "Konsole_innen")
+    b += keil("Konsole_aussen", 40, 53, -20, 20, 0, 6, 0, sa, koerper="Konsole_aussen")
+    b += [loch(45, 0, 6, 6.5, name="Stange_aussen", ziel="Konsole_aussen")]
+    for n, s in enumerate((-1, 1)):
+        y = s * STIFT_A
+        b += stift(f"Stift_a{n}", 40 + STIFT_R_AUSSEN - 338, y, round(6 + sa * y - 0.3, 4), "Konsole_aussen", hoehe=STIFT_H + 0.3)
+    b += markierung_bergauf("Marke_aussen", 40, 53, 20, "Konsole_aussen")
+    return b
+
+
+def klemmbock_v2():
+    """Klemmbock mit schräger Unterseite (auf der Keil-Konsole) und schräger Zungen-Unterseite (auf der Randleiste),
+    Oberseite waagerecht für Scheibe und Mutter. Fase unten an der hohen Stirnseite = bergauf."""
+    s = gefaelle(256)
+    oben = round(7.7 + 3 + s * 7, 2)                     # waagerechte Oberseite über der höchsten Stelle
+    b = []
+    b += keil("Klemmbock", 2, 17.5, -7, 7, 0, oben, s, 0, koerper="Klemmbock")          # Bein bis ganz oben
+    b += keil("Klemmbock_Zunge", 17.5, 23, -7, 7, 7.7, oben, s, 0, op="join", koerper="Klemmbock")
+    b += [loch(8, 0, oben, 6.5, name="Stange", ziel="Klemmbock")]
+    # Fase oben an der hohen Stirnseite = bergauf
+    b += vieleck("Marke", [[7, oben], [5.5, oben], [7, oben - 1.5]], 21, op="cut", koerper="Klemmbock", ebene="YZ", offset=2)
+    return b
+
+
+TEILE_V2["HA_02_Konsolen_v3"] = (konsolen_v3, None)
+TEILE_V2["HA_02_Klemmbock_v2"] = (klemmbock_v2, None)
