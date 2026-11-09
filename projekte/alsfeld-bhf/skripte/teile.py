@@ -588,3 +588,18 @@ def passprobe_varianten(nur=None):
                        rot([r + 0.75, vz * 1.5], kante), rot([r - 0.75, vz * 1.5], kante)]
                 b += vieleck(f"{k}_K{n}", [[round(p[0], 4), round(p[1], 4)] for p in pkt], 4, op="cut", koerper=k)
     return b
+
+
+def klemmbock():
+    """Klemmbock für die Innenstange (R 240): steht neben der Platte auf der Innenkonsole,
+    die Zunge drückt mit 0,2 mm Vorspannung auf die Randleiste (Platte 3,9 + Randleiste 4 = 7,9 mm).
+    Lokale Koordinaten wie die Innenkonsole: x = R − 232, y tangential, z = Oberkante Konsole."""
+    b = []
+    b += vieleck("Klemmbock", [[2, -7], [17.5, -7], [17.5, 7], [2, 7]], 7.7, koerper="Klemmbock")      # Bein R 234–249,5
+    b += vieleck("Klemmbock_Zunge", [[2, -7], [23, -7], [23, 7], [2, 7]], 3, op="join",
+                 koerper="Klemmbock", offset=7.7)                                                     # Deckel bis R 255
+    b += [loch(8, 0, 10.7, 6.5, name="Stange", ziel="Klemmbock")]
+    return b
+
+
+TEILE_V2["HA_02_Klemmbock"] = (klemmbock, None)
