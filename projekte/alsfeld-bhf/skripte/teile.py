@@ -465,7 +465,8 @@ if __name__ == "__main__":
 # =====================================================================
 STIFT_D, STIFT_H = 4.0, 3.0          # Stift oben auf der Innenkonsole
 NUT_B, NUT_L, NUT_T = 4.4, 5.0, 3.4  # Sacklanghloch in der Platte (tangential × radial × tief)
-STIFT_R, STIFT_A = 258.0, 10.0       # Radius und Abstand zur Fuge
+STIFT_R, STIFT_A = 258.0, 10.0       # Radius und Abstand zur Fuge (innen)
+STIFT_R_AUSSEN = 343.0               # Radius der Stifte außen (auf Höhe der Stange)
 
 
 def langloch_cut(name, mitte, winkel, koerper):
@@ -493,13 +494,14 @@ def wendelplatte_v2():
     # Ende bei 0°: Mitte 10 mm von der Kante, Ende bei 30°: 10 mm vor der Kante
     for n, kante in enumerate((0.0, 30.0), start=1):
         vz = 1 if kante == 0 else -1
-        mitte = rot([STIFT_R, vz * STIFT_A], kante)
-        b += langloch_cut(f"Stiftloch_{n}", mitte, kante, "Wendelplatte")
+        for r, seite in ((STIFT_R, "i"), (STIFT_R_AUSSEN, "a")):
+            mitte = rot([r, vz * STIFT_A], kante)
+            b += langloch_cut(f"Stiftloch_{seite}{n}", mitte, kante, "Wendelplatte")
     return b
 
 
 def konsolen_v2():
-    """Konsolen ohne Schrauben: innen zwei Stifte (je Plattenende einer), außen nur die Stangenbohrung."""
+    """Konsolen ohne Schrauben: innen und außen je zwei Stifte (je Plattenende einer) plus Stangenbohrung."""
     b = []
     b += vieleck("Konsole_innen", [[0, -20], [30, -20], [30, 20], [0, 20]], 6, koerper="Konsole_innen")
     b += [loch(8, 0, 6, 6.5, name="Stange_innen", ziel="Konsole_innen")]
@@ -507,6 +509,8 @@ def konsolen_v2():
         b += stift(f"Stift_{n}", STIFT_R - 232, s * STIFT_A, 6, "Konsole_innen")
     b += vieleck("Konsole_aussen", [[40, -20], [53, -20], [53, 20], [40, 20]], 6, koerper="Konsole_aussen")
     b += [loch(45, 0, 6, 6.5, name="Stange_aussen", ziel="Konsole_aussen")]
+    for n, s in enumerate((-1, 1)):
+        b += stift(f"Stift_a{n}", 40 + STIFT_R_AUSSEN - 338, s * STIFT_A, 6, "Konsole_aussen")
     return b
 
 
@@ -515,6 +519,9 @@ def passprobe():
     b = ringsektor("Probe", 250, 275, 0, 8, 4, koerper="Passprobe")
     b += ringsektor("Probe_Rand", 250, 254, 0, 8, 4, op="join", koerper="Passprobe", offset=4)
     b += langloch_cut("Probe_Loch", [STIFT_R, STIFT_A], 0, "Passprobe")
+    # Außenstück R 330–350 (ohne Leitkante, nur für die Passung)
+    b += ringsektor("Probe_a", 330, 350, 0, 6, 4, koerper="Passprobe_aussen")
+    b += langloch_cut("Probe_Loch_a", [STIFT_R_AUSSEN, STIFT_A], 0, "Passprobe_aussen")
     return b
 
 
