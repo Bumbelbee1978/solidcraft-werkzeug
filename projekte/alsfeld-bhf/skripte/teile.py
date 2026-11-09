@@ -551,3 +551,40 @@ TEILE_V2 = {
     "HA_03_Bettung_innen_30_v2": (lambda: gleisbettung_v2("Bett_innen_30", 280, 30, "innen"), None),
     "HA_03_Bettung_innen_15_v2": (lambda: gleisbettung_v2("Bett_innen_15", 280, 15, "innen"), None),
 }
+
+
+def langloch_var(name, mitte, winkel, koerper, breite, laenge):
+    """Langloch mit frei wählbaren Maßen (für Passproben-Varianten)."""
+    global NUT_B, NUT_L
+    alt = NUT_B, NUT_L
+    NUT_B, NUT_L = breite, laenge
+    try:
+        return langloch_cut(name, mitte, winkel, koerper)
+    finally:
+        NUT_B, NUT_L = alt
+
+
+def passprobe_varianten(nur=None):
+    """Je Variante ein Paar A/B (R 250–275, 8°). Kerben an der Außenkante zählen die Variante (1, 2, 3)."""
+    varianten = [(4.0, 4.6), (4.1, 4.6), (4.2, 4.6)]
+    b = []
+    for v, (br, la) in enumerate(varianten, start=1):
+        for seite in ("A", "B"):
+            if nur and nur != (v, seite):
+                continue
+            w0 = 0 if seite == "A" else 10              # Lagen, bei denen der Kernel zuverlässig rechnet
+            k = f"V{v}_{seite}"
+            b += ringsektor(f"{k}_P", 250, 275, w0, w0 + 8, 4, koerper=k)
+            b += ringsektor(f"{k}_R", 250, 254, w0, w0 + 8, 4, op="join", koerper=k, offset=4)
+            if seite == "A":
+                b += langloch_var(f"{k}_L", rot([STIFT_R, STIFT_A], w0), w0, k, br, la)
+            else:
+                b += langloch_var(f"{k}_L", rot([STIFT_R, -STIFT_A], w0 + 8), w0 + 8, k, br, la)
+            # Kerben 1,5 × 1,5 mm an der freien (geraden) Endkante zählen die Variante
+            kante, vz = (w0 + 8, -1) if seite == "A" else (w0, 1)
+            for n in range(v):
+                r = 262 + 4 * n
+                pkt = [rot([r - 0.75, vz * -0.5], kante), rot([r + 0.75, vz * -0.5], kante),
+                       rot([r + 0.75, vz * 1.5], kante), rot([r - 0.75, vz * 1.5], kante)]
+                b += vieleck(f"{k}_K{n}", [[round(p[0], 4), round(p[1], 4)] for p in pkt], 4, op="cut", koerper=k)
+    return b
