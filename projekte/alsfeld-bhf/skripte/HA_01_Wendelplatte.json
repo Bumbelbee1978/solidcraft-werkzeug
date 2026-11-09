@@ -1,0 +1,424 @@
+{
+ "commands": [
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "dicke",
+    "expression": "4 mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "leit_h",
+    "expression": "10 mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "rand_h",
+    "expression": "4 mm"
+   }
+  },
+  {
+   "command": "sketch.create",
+   "params": {
+    "plane": "XY",
+    "name": "Umriss"
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "points": [
+     [
+      250,
+      0
+     ],
+     [
+      294,
+      0
+     ],
+     [
+      291,
+      10
+     ],
+     [
+      309,
+      10
+     ],
+     [
+      306,
+      0
+     ],
+     [
+      339,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "command": "sketch.arc.three_point",
+   "params": {
+    "start": [
+     339,
+     0
+    ],
+    "end": [
+     347,
+     0
+    ],
+    "through": [
+     343,
+     4
+    ]
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "points": [
+     [
+      347,
+      0
+     ],
+     [
+      350,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "command": "sketch.arc.three_point",
+   "params": {
+    "start": [
+     350,
+     0
+    ],
+    "end": [
+     303.1089,
+     175.0
+    ],
+    "through": [
+     338.074,
+     90.5867
+    ]
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "points": [
+     [
+      303.1089,
+      175.0
+     ],
+     [
+      300.5108,
+      173.5
+     ]
+    ]
+   }
+  },
+  {
+   "command": "sketch.arc.three_point",
+   "params": {
+    "start": [
+     300.5108,
+     173.5
+    ],
+    "end": [
+     293.5826,
+     169.5
+    ],
+    "through": [
+     299.0467,
+     168.0359
+    ]
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "points": [
+     [
+      293.5826,
+      169.5
+     ],
+     [
+      264.8681,
+      152.9217
+     ],
+     [
+      262.5023,
+      162.9295
+     ],
+     [
+      247.263,
+      154.1312
+     ],
+     [
+      254.7471,
+      147.0783
+     ],
+     [
+      216.5064,
+      125.0
+     ]
+    ]
+   }
+  },
+  {
+   "command": "sketch.arc.three_point",
+   "params": {
+    "start": [
+     216.5064,
+     125.0
+    ],
+    "end": [
+     250,
+     0
+    ],
+    "through": [
+     241.4815,
+     64.7048
+    ]
+   }
+  },
+  {
+   "command": "sketch.finish",
+   "params": {}
+  },
+  {
+   "command": "solid.extrude",
+   "params": {
+    "distance": "dicke",
+    "name": "Platte",
+    "body_name": "Wendelplatte"
+   }
+  },
+  {
+   "command": "sketch.create",
+   "params": {
+    "plane": "XY",
+    "name": "Leitkante",
+    "offset": "dicke"
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "points": [
+     [
+      347,
+      0
+     ],
+     [
+      350,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "command": "sketch.arc.three_point",
+   "params": {
+    "start": [
+     350,
+     0
+    ],
+    "end": [
+     303.1089,
+     175.0
+    ],
+    "through": [
+     338.074,
+     90.5867
+    ]
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "points": [
+     [
+      303.1089,
+      175.0
+     ],
+     [
+      300.5108,
+      173.5
+     ]
+    ]
+   }
+  },
+  {
+   "command": "sketch.arc.three_point",
+   "params": {
+    "start": [
+     300.5108,
+     173.5
+    ],
+    "end": [
+     347,
+     0
+    ],
+    "through": [
+     335.1763,
+     89.8102
+    ]
+   }
+  },
+  {
+   "command": "sketch.finish",
+   "params": {}
+  },
+  {
+   "command": "solid.extrude",
+   "params": {
+    "distance": "leit_h",
+    "operation": "join",
+    "name": "Leitkante_Körper"
+   }
+  },
+  {
+   "command": "sketch.create",
+   "params": {
+    "plane": "XY",
+    "name": "Randleiste",
+    "offset": "dicke"
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "points": [
+     [
+      250,
+      0
+     ],
+     [
+      254,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "command": "sketch.arc.three_point",
+   "params": {
+    "start": [
+     254,
+     0
+    ],
+    "end": [
+     219.9705,
+     127.0
+    ],
+    "through": [
+     245.3452,
+     65.74
+    ]
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "points": [
+     [
+      219.9705,
+      127.0
+     ],
+     [
+      216.5064,
+      125.0
+     ]
+    ]
+   }
+  },
+  {
+   "command": "sketch.arc.three_point",
+   "params": {
+    "start": [
+     216.5064,
+     125.0
+    ],
+    "end": [
+     250,
+     0
+    ],
+    "through": [
+     241.4815,
+     64.7048
+    ]
+   }
+  },
+  {
+   "command": "sketch.finish",
+   "params": {}
+  },
+  {
+   "command": "solid.extrude",
+   "params": {
+    "distance": "rand_h",
+    "operation": "join",
+    "name": "Randleiste_Körper"
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     257.8062,
+     9.9975,
+     0
+    ],
+    "diameter": 2.4,
+    "depth": 3,
+    "name": "Vorbohrung_1"
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     228.2655,
+     120.245,
+     0
+    ],
+    "diameter": 2.4,
+    "depth": 3,
+    "name": "Vorbohrung_2"
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     342.7143,
+     13.9961,
+     0
+    ],
+    "diameter": 2.4,
+    "depth": 3,
+    "name": "Vorbohrung_3"
+   }
+  },
+  {
+   "command": "solid.hole",
+   "params": {
+    "position": [
+     303.7974,
+     159.2362,
+     0
+    ],
+    "diameter": 2.4,
+    "depth": 3,
+    "name": "Vorbohrung_4"
+   }
+  }
+ ]
+}

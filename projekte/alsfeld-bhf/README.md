@@ -32,4 +32,13 @@ python3 teile.py            # alle Teile, oder: python3 teile.py HA_11_Kabine
 
 Druckwerte: Schwalbenschwanz-Spiel 0,15 mm je Seite, Faltwände mit 0,2-Düse und 0,1-mm-Schicht, Klarteile aus PET-Folie 0,2 mm.
 
-Offen: Wendelplatte HA_01 und die Word-Planung sind noch nicht im Repo.
+## Wendel v2 (09.11.2026, Ratsbeschluss: keine Schrauben im Plattenmaterial)
+
+- Schwalbenschwänze verkleben (dünner Sekundenkleber, ggf. mit Primer)
+- Außen: Gewindestange durch die halben Löcher an der Fuge – sonst nichts
+- Innen: Konsole mit zwei Stiften Ø 4 × 3 mm (R 258, 10 mm neben der Fuge), Platte mit Sacklanghloch 4,4 × 5 × 3,4 mm von unten
+- Höhe nur über Mutter und Kontermutter einstellen
+- TPU-Bettung mit Anschlagnasen (6 × 1 mm) bis an Randleiste bzw. Leitkante, Nasen 5° vom Streifenende
+
+`skripte/HA_01_Wendelplatte.json` ist das Grundskript der Platte, `wendelplatte_v2()` baut daraus die neue Version.
+`druck/` enthält die zusammengestellten Druckplatten (Testsatz, Passprobe, TPU-Testsatz) und `testsatz.py` zum Anordnen.
