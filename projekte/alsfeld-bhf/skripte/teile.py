@@ -666,3 +666,55 @@ def klemmbock_v2():
 
 TEILE_V2["HA_02_Konsolen_v3"] = (konsolen_v3, None)
 TEILE_V2["HA_02_Klemmbock_v2"] = (klemmbock_v2, None)
+
+
+def sonderkonsole_v3():
+    """Sonderkonsole (Außenstange R 395 bei 60°, Stöße 11/23/35): Keil-Oberseite, 2 Stifte bei R 343, keine Schrauben."""
+    sa = gefaelle(344)
+    b = keil("Sonderkonsole", 0, 64, -20, 20, 0, 5, 0, sa, koerper="Sonderkonsole")
+    b += [loch(57, 0, 5, 6.5, name="Stange", ziel="Sonderkonsole")]
+    for n, s in enumerate((-1, 1)):
+        y = s * STIFT_A
+        b += stift(f"Stift{n}", STIFT_R_AUSSEN - 338, y, round(5 + sa * y - 0.3, 4), "Sonderkonsole", hoehe=STIFT_H + 0.3)
+    b += markierung_bergauf("Marke", 0, 64, 20, "Sonderkonsole")
+    return b
+
+
+def anlaufkloetze_v3():
+    """Anlaufklötze Stoß 1–4 mit Keil-Oberseite und Stiften; auf die Erweiterung geschraubt.
+    Stoß 1 hat einen Knick: bergab die halbe Steigung (Übergang ab Einfahrt), bergauf die volle."""
+    b = []
+    si, sa = gefaelle(256), gefaelle(344)
+    for i, h in enumerate(ANLAUF_HOEHEN, start=1):
+        x0 = (i - 1) * 50
+        for seite, (xa, xe, s, xs, ys_schr, l) in {
+                "innen": (x0, x0 + 30, si, x0 + STIFT_R - 232, None, 20),
+                "aussen": (x0, x0 + 13, sa, x0 + STIFT_R_AUSSEN - 338, 20, 25)}.items():
+            k = f"Klotz{i}_{seite}"
+            yv = 0 if seite == "innen" else 70          # Außenklötze daneben bauen
+            # Keil in zwei Hälften (bergab/bergauf), damit Stoß 1 den Knick bekommt
+            s_ab = s / 2 if i == 1 else s
+            def pkt(y0, y1, sl):
+                return [[yv + y0, round(sl * y0 * 0, 4)], [yv + y1, 0],
+                        [yv + y1, round(h + sl * y1, 4)], [yv + y0, round(h + sl * y0, 4)]]
+            b += vieleck(k, pkt(-l, 0, s_ab), xe - xa, koerper=k, ebene="YZ", offset=xa)
+            b += vieleck(k + "_b", pkt(0, l, s), xe - xa, op="join", koerper=k, ebene="YZ", offset=xa)
+            xr = x0 + (8 if seite == "innen" else 5)
+            b += [loch(xr, yv, h, 6.5, name=k + "_Stange", ziel=k)]
+            for n, sg in enumerate((-1, 1)):
+                y = sg * STIFT_A
+                z = round(h + (s_ab if sg < 0 else s) * y - 0.3, 4)
+                b += stift(f"{k}_Stift{n}", xs, yv + y, z, k, hoehe=STIFT_H + 0.3)
+            cs = min(6.4, 3.5 + 2 * (h - 0.6))
+            if seite == "innen":
+                b += [loch(x0 + 21, yv, h, 3.5, art="countersink", cs_diameter=cs, cs_angle=90, name=k + "_Schr", ziel=k)]
+            else:
+                for n, sg in enumerate((-1, 1)):
+                    zz = round(h + (s_ab if sg < 0 else s) * sg * 20, 4)
+                    b += [loch(x0 + 6.5, yv + sg * 20, zz, 3.5, art="countersink", cs_diameter=cs, cs_angle=90,
+                               name=f"{k}_Schr{n}", ziel=k)]
+    return b
+
+
+TEILE_V2["HA_04_Sonderkonsole_v3"] = (sonderkonsole_v3, None)
+TEILE_V2["HA_05_Anlaufkloetze_v3"] = (anlaufkloetze_v3, None)
