@@ -718,3 +718,35 @@ def anlaufkloetze_v3():
 
 TEILE_V2["HA_04_Sonderkonsole_v3"] = (sonderkonsole_v3, None)
 TEILE_V2["HA_05_Anlaufkloetze_v3"] = (anlaufkloetze_v3, None)
+
+
+def konsolen_knick(f_ab, f_auf):
+    """Konsolen für Stöße mit Steigungswechsel: Keil bergab mit f_ab × Steigung, bergauf mit f_auf × Steigung.
+    Stoß 41: (1, 0,5) – Übergang zur halben Steigung; Stoß 42: (0,5, 0) – Übergang in die waagerechte Ausfahrt."""
+    b = []
+    for k, (xa, xe, r_st, x_st, x_stift, s) in {
+            "Konsole_innen": (0, 30, 8, None, STIFT_R - 232, gefaelle(256)),
+            "Konsole_aussen": (40, 53, 45, None, 40 + STIFT_R_AUSSEN - 338, gefaelle(344))}.items():
+        for teil, (y0, y1, f) in {"ab": (-20, 0, f_ab), "auf": (0, 20, f_auf)}.items():
+            pkt = [[y0, 0], [y1, 0], [y1, round(6 + f * s * y1, 4)], [y0, round(6 + f * s * y0, 4)]]
+            b += vieleck(f"{k}_{teil}", pkt, xe - xa, op="new" if teil == "ab" else "join", koerper=k, ebene="YZ", offset=xa)
+        b += [loch(r_st, 0, 6, 6.5, name=f"{k}_Stange", ziel=k)]
+        for n, sg in enumerate((-1, 1)):
+            y = sg * STIFT_A
+            f = f_ab if sg < 0 else f_auf
+            b += stift(f"{k}_Stift{n}", x_stift, y, round(6 + f * s * y - 0.3, 4), k, hoehe=STIFT_H + 0.3)
+        b += markierung_bergauf(f"{k}_Marke", xa, xe, 20, k)
+    return b
+
+
+def ausfahrplatte_v2():
+    """Ausfahrplatte wie bisher, aber Sacklanghlöcher für die Konsolenstifte statt Schrauben-Vorbohrungen."""
+    b = [c for c in ausfahrplatte() if not (c["command"] == "solid.hole" and c["params"]["name"].startswith("Vorbohrung"))]
+    b += langloch_cut("Stiftloch_aussen", [STIFT_A, -STIFT_R_AUSSEN], -90, "Ausfahrplatte")
+    b += langloch_cut("Stiftloch_innen", [STIFT_A, -STIFT_R], -90, "Ausfahrplatte")
+    return b
+
+
+TEILE_V2["HA_02_Konsolen_Stoss41"] = (lambda: konsolen_knick(1.0, 0.5), None)
+TEILE_V2["HA_02_Konsolen_Stoss42"] = (lambda: konsolen_knick(0.5, 0.0), None)
+TEILE_V2["HA_05_Ausfahrplatte_v2"] = (ausfahrplatte_v2, None)
