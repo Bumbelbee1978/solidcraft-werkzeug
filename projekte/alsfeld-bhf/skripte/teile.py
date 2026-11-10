@@ -750,3 +750,67 @@ def ausfahrplatte_v2():
 TEILE_V2["HA_02_Konsolen_Stoss41"] = (lambda: konsolen_knick(1.0, 0.5), None)
 TEILE_V2["HA_02_Konsolen_Stoss42"] = (lambda: konsolen_knick(0.5, 0.0), None)
 TEILE_V2["HA_05_Ausfahrplatte_v2"] = (ausfahrplatte_v2, None)
+
+
+# =====================================================================
+# v3: TPU-Bettung 1 mm in die Platte versenkt (Idee Andy, 10.11.)
+# =====================================================================
+TASCHE_T, TASCHE_LUFT = 1.0, 0.2       # Tiefe, Luft je Seite
+BETT_B = 18.0
+
+
+def taschen(koerper, w1, w2, z_oben=4.0):
+    """Zwei Bettungstaschen (R 280 und R 320) von w1 bis w2, 1 mm tief von der Oberseite."""
+    b = []
+    for r in (280, 320):
+        h = BETT_B / 2 + TASCHE_LUFT
+        b += ringsektor(f"Tasche_{r}", r - h, r + h, w1, w2, TASCHE_T, op="cut", koerper=koerper, offset=z_oben - TASCHE_T)
+    return b
+
+
+def wendelplatte_v3():
+    """Wendelplatte v2 + versenkte Bettungstaschen über die ganze Plattenlänge."""
+    return wendelplatte_v2() + taschen("Wendelplatte", -1, 31)
+
+
+def gleisbettung_v3(name, r, w):
+    """TPU-Streifen 18 × 2 mm ohne Nasen – die Tasche in der Platte führt ihn."""
+    return ringsektor(name, r - BETT_B / 2, r + BETT_B / 2, 0, w, 2, koerper=name)
+
+
+def ausfahrplatte_v3():
+    """Ausfahrplatte mit geraden Taschen für die Bettung."""
+    b = ausfahrplatte_v2()
+    for r in (280, 320):
+        h = BETT_B / 2 + TASCHE_LUFT
+        b += vieleck(f"Tasche_{r}", [[-1, -r - h], [221, -r - h], [221, -r + h], [-1, -r + h]], TASCHE_T,
+                     op="cut", koerper="Ausfahrplatte", offset=4 - TASCHE_T)
+    return b
+
+
+def bettung_gerade(name, laenge=220):
+    """Gerader TPU-Streifen für die Ausfahrplatte."""
+    return vieleck(name, [[0, 0], [laenge, 0], [laenge, BETT_B], [0, BETT_B]], 2, koerper=name)
+
+
+TEILE_V2.update({
+    "HA_01_Wendelplatte_v3": (wendelplatte_v3, None),
+    "HA_05_Ausfahrplatte_v3": (ausfahrplatte_v3, None),
+    "HA_03_Bettung_aussen_30_v3": (lambda: gleisbettung_v3("Bett_aussen_30", 320, 30), None),
+    "HA_03_Bettung_aussen_15_v3": (lambda: gleisbettung_v3("Bett_aussen_15", 320, 15), None),
+    "HA_03_Bettung_innen_30_v3": (lambda: gleisbettung_v3("Bett_innen_30", 280, 30), None),
+    "HA_03_Bettung_innen_15_v3": (lambda: gleisbettung_v3("Bett_innen_15", 280, 15), None),
+    "HA_03_Bettung_gerade_220": (lambda: bettung_gerade("Bett_gerade_220"), None),
+})
+
+
+def taschen_probe():
+    """Kurzes Plattenstück R 262–338 über 6° mit beiden Taschen + passende TPU-Stücke (zum Testen der Passung)."""
+    b = ringsektor("Probe", 262, 338, 0, 6, 4, koerper="Taschenprobe")
+    b += taschen("Taschenprobe", -1, 7)
+    for r in (280, 320):
+        b += ringsektor(f"TPU_{r}", r - 9, r + 9, 10, 16, 2, koerper=f"TPU_Probe_{r}")
+    return b
+
+
+TEILE_V2["HA_03_Taschenprobe"] = (taschen_probe, None)

@@ -44,7 +44,7 @@ def stapel(p, d, n, delta, name):
 
 
 # ---------- Druckplatten ----------
-pp, pd = obj("HA_01_Wendelplatte_v2.3mf"); pp = t.drehen_z(pp, 75)
+pp, pd = obj("HA_01_Wendelplatte_v3.3mf"); pp = t.drehen_z(pp, 75)
 platte("01_Wendelplatten_2Stk_21x_drucken.3mf", [("Wendelplatte_1", t.ablegen(pp, 6, 8), pd), ("Wendelplatte_2", t.ablegen(pp, 6, 122.5), pd)])
 
 k = t.lesen("HA_02_Konsolen_v3.3mf"); tl = []
@@ -68,24 +68,26 @@ for n, dat in enumerate(("HA_02_Konsolen_Stoss41.3mf", "HA_02_Konsolen_Stoss42.3
     tl.append((f"Stoss{41+n}_aussen", t.ablegen(kk["Konsole_aussen"][0], 45 + n * 65, 205), kk["Konsole_aussen"][1]))
 platte("04_Anlaufkloetze_Sonderkonsolen_Stoss41-42_1x_drucken.3mf", tl)
 
-ap = obj("HA_05_Ausfahrplatte_v2.3mf")
+ap = obj("HA_05_Ausfahrplatte_v3.3mf")
 platte("05_Ausfahrplatte_1x_drucken.3mf", [("Ausfahrplatte", t.ablegen(ap[0], 18, 78), ap[1])])
 
-for datei, w, delta, n, anzahl, name in [("HA_03_Bettung_aussen_30_v2.3mf", 30, 42, 5, 9, "TPU_Bettung_aussen30_5Stk"),
-                                        ("HA_03_Bettung_innen_30_v2.3mf", 30, 40, 6, 7, "TPU_Bettung_innen30_6Stk")]:
+for datei, w, delta, n, anzahl, name in [("HA_03_Bettung_aussen_30_v3.3mf", 30, 22, 11, 4, "TPU_Bettung_aussen30_11Stk"),
+                                        ("HA_03_Bettung_innen_30_v3.3mf", 30, 22, 11, 4, "TPU_Bettung_innen30_11Stk")]:
     p, d = obj(datei); p = t.drehen_z(p, 90 - w / 2)
     nr = "06" if "aussen" in name else "07"
     platte(f"{nr}_{name}_{anzahl}x_drucken.3mf", stapel(p, d, n, delta, name))
 tl = []
-for i, (datei, delta_y) in enumerate((("HA_03_Bettung_aussen_15_v2.3mf", 5), ("HA_03_Bettung_innen_15_v2.3mf", 120))):
+gp, gd = obj("HA_03_Bettung_gerade_220.3mf")
+tl += [(f"Bettung_gerade_{j+1}", t.ablegen(gp, 18, 200 + j * 26), gd) for j in range(2)]
+for i, (datei, delta_y) in enumerate((("HA_03_Bettung_aussen_15_v3.3mf", 5), ("HA_03_Bettung_innen_15_v3.3mf", 90))):
     p, d = obj(datei); p = t.drehen_z(p, 90 - 7.5); g = p.max(0) - p.min(0)
     for j in range(2):
         tl.append((f"{datei[3:-8]}_{j+1}", t.ablegen(p, 8 + j * (g[0] + 15), delta_y), d))
-platte("08_TPU_Bettung_15Grad_Anfang_Ende_1x_drucken.3mf", tl)
+platte("08_TPU_Bettung_15Grad_und_gerade_1x_drucken.3mf", tl)
 
 # ---------- Einzelteile ----------
 E = ZIEL / "02_Einzelteile"
-einzel = [("HA_01_Wendelplatte_v2", None, "HA01_Wendelplatte_42x", None),
+einzel = [("HA_01_Wendelplatte_v3", None, "HA01_Wendelplatte_42x", None),
           ("HA_02_Konsolen_v3", "Konsole_innen", "HA02_Konsole_innen_36x", None),
           ("HA_02_Konsolen_v3", "Konsole_aussen", "HA02_Konsole_aussen_33x", None),
           ("HA_02_Konsolen_Stoss41", None, "HA02_Konsolen_Stoss41_innen+aussen_1x", "alle"),
@@ -93,11 +95,12 @@ einzel = [("HA_01_Wendelplatte_v2", None, "HA01_Wendelplatte_42x", None),
           ("HA_02_Klemmbock_v2", None, "HA02_Klemmbock_42x", "drehen"),
           ("HA_04_Sonderkonsole_v3", None, "HA04_Sonderkonsole_3x", None),
           ("HA_05_Anlaufkloetze_v3", None, "HA05_Anlaufkloetze_Satz_8Teile_1x", "alle"),
-          ("HA_05_Ausfahrplatte_v2", None, "HA05_Ausfahrplatte_1x", None),
-          ("HA_03_Bettung_aussen_30_v2", None, "HA03_TPU_Bettung_aussen_30Grad_41x", None),
-          ("HA_03_Bettung_innen_30_v2", None, "HA03_TPU_Bettung_innen_30Grad_41x", None),
-          ("HA_03_Bettung_aussen_15_v2", None, "HA03_TPU_Bettung_aussen_15Grad_2x", None),
-          ("HA_03_Bettung_innen_15_v2", None, "HA03_TPU_Bettung_innen_15Grad_2x", None)]
+          ("HA_05_Ausfahrplatte_v3", None, "HA05_Ausfahrplatte_1x", None),
+          ("HA_03_Bettung_aussen_30_v3", None, "HA03_TPU_Bettung_aussen_30Grad_41x", None),
+          ("HA_03_Bettung_innen_30_v3", None, "HA03_TPU_Bettung_innen_30Grad_41x", None),
+          ("HA_03_Bettung_aussen_15_v3", None, "HA03_TPU_Bettung_aussen_15Grad_2x", None),
+          ("HA_03_Bettung_innen_15_v3", None, "HA03_TPU_Bettung_innen_15Grad_2x", None),
+          ("HA_03_Bettung_gerade_220", None, "HA03_TPU_Bettung_gerade_Ausfahrt_2x", None)]
 for quelle, koerper, ziel, art in einzel:
     o = t.lesen(quelle + ".3mf")
     if art == "alle":
@@ -116,5 +119,15 @@ for f in E.glob("HA02_Konsole_innen_36x_(beide).step"):
 T = ZIEL / "03_Testdrucke"
 shutil.copy("/home/claude/heimanlage/druck/Keil_Konsolen_Klemmbock_Test_PETG.3mf", T / "Test1_Konsolen_Keil_Klemmbock.3mf")
 shutil.copy("/home/claude/heimanlage/druck/Passprobe_Varianten_PETG.3mf", T / "Test2_Passprobe_Stifte_3Varianten.3mf")
-shutil.copy("/home/claude/heimanlage/druck/TPU_Bettung_Testsatz.3mf", T / "Test3_TPU_Bettung_je1.3mf")
+shutil.copy("/home/claude/heimanlage/druck/Taschenprobe_PETG.3mf", T / "Test3a_Taschenprobe_PETG.3mf")
+shutil.copy("/home/claude/heimanlage/druck/Taschenprobe_TPU.3mf", T / "Test3b_Taschenprobe_TPU.3mf")
 print(sorted(str(p.relative_to(ZIEL)) for p in ZIEL.rglob("*") if p.is_file()))
+
+# ---------- Anleitung, Beschreibung, Titelbild (werden durch das Neuanlegen sonst gelöscht) ----------
+A = ZIEL / "04_Anleitung"
+for q in ("/home/claude/heimanlage/schablone/Wendel_Bohrschablone_1zu1.pdf",
+          "/home/claude/heimanlage/druck/Keil_Skizze.png", "/home/claude/heimanlage/druck/Klemmbock_Schnitt.png"):
+    shutil.copy(q, A)
+shutil.copy("Titelbild_Wendel.png", ZIEL)
+shutil.copy("Beschreibung_MakerWorld.md", ZIEL)
+shutil.copy("Druckplatten_Uebersicht.png", A)
